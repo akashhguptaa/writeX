@@ -1,0 +1,123 @@
+/* Add smooth scrolling behavior to html */
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  margin: 10mm auto;
+  background: white;
+  overflow: hidden;
+  break-after: page;
+  transition: all 0.3s;
+}
+
+.page.hidden {
+  display: none;
+}
+
+.toolbar-btn {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.toolbar-btn:hover {
+  background-color: #f8fafc;
+}
+
+.toolbar-btn.active {
+  background-color: #e2e8f0;
+}
+
+@media print {
+  .toolbar {
+    display: none;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+.page-thumbnail {
+  width: 100%;
+  aspect-ratio: 1/1.414; /* A4 aspect ratio */
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  background: white;
+  max-width: 120px; /* Reduce thumbnail size */
+  margin: 0 auto; /* Center thumbnails */
+}
+
+.page-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.page-thumbnail.active {
+  border: 2px solid #3b82f6;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+}
+
+/* Modify sidebar collapse styles */
+#sidebar {
+  margin-left: -0.5rem; /* Negative margin to overlap with toggle button */
+}
+
+#sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-left: 0;
+}
+
+#toggleSidebar {
+  min-width: fit-content;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+#sidebar.collapsed + #mainContent {
+  padding-left: 0;
+}
+
+#mainContent {
+  padding-left: 1rem;
+}
+
+#mainContent.full-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#mainContent.full-width .page {
+  margin: 10mm auto;
+}
+
+/* Rotate chevron when sidebar is collapsed */
+#sidebar.collapsed ~ #toggleSidebar .fa-chevron-left {
+  transform: rotate(180deg);
+}
+
+.fa-chevron-left {
+  font-size: 0.875rem;
+}
