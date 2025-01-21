@@ -12,6 +12,7 @@ import ProjectEditor from "./pages/ProjectEditor";
 import About from "./pages/About";
 import "./styles.css";
 import FeaturesSection from "./components/FeaturesSection";
+import SelectImages from "./components/SelectImages";
 
 function App() {
   return (
@@ -25,9 +26,12 @@ function App() {
         </Routes>
       </div>
       <Routes>
-        <Route path="/" element={<FeaturesSection />} />
+        {/* <Route path="/" element={<FeaturesSection />} /> */}
       </Routes>
     </Router>
+    // <>
+    // <SelectImages />
+    // </>
   );
 }
 

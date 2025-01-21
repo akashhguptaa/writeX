@@ -91,7 +91,7 @@ const Projects = () => {
             <FaPlus className="text-4xl text-gray-400" />
           </div>
           {isActive && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+            <div className="fixed inset-0 flex items-center justify-center">
               <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full relative">
                 <button
                   onClick={closePopup}

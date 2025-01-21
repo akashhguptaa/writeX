@@ -51,12 +51,14 @@ const Navbar = ({ background = "" }) => {
               >
                 About
               </Link>
-              <a
-                href="#contact"
+              <HashLink
+                smooth
+                to="/#contact"
                 className="text-white hover:text-cyan-500 px-3 py-2 rounded-md scroll-smooth"
               >
                 Contact
-              </a>
+              </HashLink>
+
             </div>
 
             {/* login and signup buttons */}

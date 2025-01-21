@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SelectImages from "./SelectImages";
 
 const NewProject = () => {
   const navigate = useNavigate();
+  const [selecImage, setSelectImage] = useState(false);
+  const handleSelectImage = () => {
+    setSelectImage(true);
+  };
+  const closePopUp = () => {
+    setSelectImage(false);
+  };
   const [projectData, setProjectData] = useState({
     title: "",
     description: "",
@@ -52,14 +60,25 @@ const NewProject = () => {
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Cover Image (Optional)
           </label>
-          <input
-            type="file"
-            accept="image/*"
-            className="w-full"
-            onChange={(e) =>
-              setProjectData({ ...projectData, image: e.target.files[0] })
-            }
-          />
+          <div
+            onClick={handleSelectImage}
+            className="rounded-xl p-2 flex items-center justify-center cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
+          >
+            Add Image
+          </div>
+          {selecImage && (
+            <div className="fixed inset-0 flex items-center justify-center shadow-xl ">
+              <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full relative">
+                <button
+                  onClick={closePopUp}
+                  className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                >
+                  ✖
+                </button>
+                <SelectImages />
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-end space-x-4">

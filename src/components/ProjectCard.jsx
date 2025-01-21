@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const ProjectCard = ({ project }) => {
   return (
     <div className="grid grid-cols-1 gap-6">
-      {/* New Project Card */}
   
-
       {/* Existing Project Card */}
       <div className="w-64 h-80 bg-white border rounded-lg shadow-md overflow-hidden">
         <img
