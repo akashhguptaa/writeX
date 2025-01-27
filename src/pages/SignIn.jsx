@@ -1,67 +1,63 @@
-import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Stack from '@mui/material/Stack';
-import AppTheme from '../shared-theme/AppTheme';
-import ColorModeSelect from '../shared-theme/ColorModeSelect';
-import SignInCard from './components/SignInCard';
-import Content from './components/Content';
+import React from "react";
+import Icon from "../Assets/icon.svg";
+import { Link } from "react-router-dom";
 
-export default function SignInSide(props) {
+const SignIn = () => {
   return (
-    <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
-      <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
-      <Stack
-        direction="column"
-        component="main"
-        sx={[
-          {
-            justifyContent: 'center',
-            height: 'calc((1 - var(--template-frame-height, 0)) * 100%)',
-            marginTop: 'max(40px - var(--template-frame-height, 0px), 0px)',
-            minHeight: '100%',
-          },
-          (theme) => ({
-            '&::before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              zIndex: -1,
-              inset: 0,
-              backgroundImage:
-                'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
-              backgroundRepeat: 'no-repeat',
-              ...theme.applyStyles('dark', {
-                backgroundImage:
-                  'radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))',
-              }),
-            },
-          }),
-        ]}
-      >
-        <Stack
-          direction={{ xs: 'column-reverse', md: 'row' }}
-          sx={{
-            justifyContent: 'center',
-            gap: { xs: 6, sm: 12 },
-            p: 2,
-            mx: 'auto',
-          }}
-        >
-          <Stack
-            direction={{ xs: 'column-reverse', md: 'row' }}
-            sx={{
-              justifyContent: 'center',
-              gap: { xs: 6, sm: 12 },
-              p: { xs: 2, sm: 4 },
-              m: 'auto',
-            }}
+    <div className="h-screen flex items-center justify-center bg-gray-200">
+      <div className="bg-white drop-shadow-xl rounded-lg p-8 max-w-sm w-full">
+        <div className="flex flex-col items-center ">
+          <Link to="/" className="delay-100">
+            <div className="m-2 flex gap-2">
+              <h1 className="text-4xl font-bold text-slate-700 hover:text-gray-500">
+                <span>write</span>
+                <span className="font-extrabold text-cyan-600 hover:text-cyan-500">
+                  X
+                </span>
+              </h1>
+              <img src={Icon} alt="writeX logo" className="h-10 w-auto" />
+            </div>
+          </Link>
+          <h2 className="pt-6 text-2xl"> Welcome</h2>
+          <p className="pt-2">Login to contiune your writing with writeX</p>
+        </div>
+        <form className="pt-8">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Email"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Password"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition"
           >
-            <Content />
-            <SignInCard />
-          </Stack>
-        </Stack>
-      </Stack>
-    </AppTheme>
+            Sign In
+          </button>
+        </form>
+        <div className="mt-6 text-center text-sm text-gray-500">
+          Don't have an account?{" "}
+          <a href="/signup" className="text-blue-500">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default SignIn;

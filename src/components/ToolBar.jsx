@@ -1,9 +1,37 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import ProjectInfoBar from "./ProjectInfoBar";
+import SideBar from "./SideBar";
+
 export default function ToolBar() {
   return (
-    <div id="mainContent" class="flex-1 transition-all duration-300">
-      <div class="toolbar bg-white p-4 rounded-t-lg shadow-sm mb-1">
-        <div class="flex flex-wrap gap-2">
-          <select id="fontSize" class="border rounded px-2 py-1">
+    <div
+      id="mainContent"
+      className="bg-slate-800 flex justify-between items-center transition-all duration-300 p-3 shadow-md"
+    >
+      {/* Logo Link (Left-aligned) */}
+
+      <div className="m-2 flex flex-row">
+      <i className="fa-solid fa-bars text-2xl text-white justify-center flex items-center p-2 "></i>
+
+        <Link to="/" className="delay-100 pl-5">
+          <h1 className="text-4xl text-white hover:text-gray-200">
+            <span>write</span>
+            <span className="font-bold text-cyan-300 hover:text-cyan-500">
+              X
+            </span>
+          </h1>
+        </Link>
+      </div>
+
+      {/* Toolbar (Centered) */}
+      <div className = "flex flex-row items-center gap-8 pr-4">
+      <div className="toolbar bg-gray-100 flex justify-center p-3 border border-gray-400 rounded-lg shadow-sm max-w-md w-full ">
+        <div className="flex flex-wrap gap-4">
+          <select
+            id="fontSize"
+            className="border border-gray-300 rounded drop-shadow-lg px-2 py-1"
+          >
             <option value="12">12</option>
             <option value="14">14</option>
             <option value="16" selected>
@@ -16,37 +44,60 @@ export default function ToolBar() {
             <option value="32">32</option>
           </select>
 
-          <button onclick="formatText('bold')" class="toolbar-btn">
-            <i class="fas fa-bold"></i>
-          </button>
-          <button onclick="formatText('italic')" class="toolbar-btn">
-            <i class="fas fa-italic"></i>
+          <button
+            onClick={() => formatText("bold")}
+            className="toolbar-btn border border-gray-600 drop-shadow-lg px-2 py-1"
+          >
+            <i className="fas fa-bold"></i>
           </button>
           <button
-            onclick="formatText('insertUnorderedList')"
-            class="toolbar-btn"
+            onClick={() => formatText("italic")}
+            className="toolbar-btn border border-gray-300 drop-shadow-lg px-2 py-1"
           >
-            <i class="fas fa-list-ul"></i>
-          </button>
-          <button onclick="alignText('left')" class="toolbar-btn">
-            <i class="fas fa-align-left"></i>
-          </button>
-          <button onclick="alignText('center')" class="toolbar-btn">
-            <i class="fas fa-align-center"></i>
-          </button>
-          <button onclick="alignText('right')" class="toolbar-btn">
-            <i class="fas fa-align-right"></i>
+            <i className="fas fa-italic"></i>
           </button>
           <button
-            onclick="addNewPage()"
-            class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+            onClick={() => formatText("insertUnorderedList")}
+            className="toolbar-btn border border-gray-300 drop-shadow-lg px-2 py-1"
           >
-            Add Page
+            <i className="fas fa-list-ul"></i>
+          </button>
+          <button
+            onClick={() => alignText("left")}
+            className="toolbar-btn border border-gray-300 drop-shadow-lg px-2 py-1"
+          >
+            <i className="fas fa-align-left"></i>
+          </button>
+          <button
+            onClick={() => alignText("center")}
+            className="toolbar-btn border border-gray-300 drop-shadow-lg px-2 py-1"
+          >
+            <i className="fas fa-align-center"></i>
+          </button>
+          <button
+            onClick={() => alignText("right")}
+            className="toolbar-btn border border-gray-300 drop-shadow-lg px-2 py-1"
+          >
+            <i className="fas fa-align-right"></i>
           </button>
         </div>
+        
       </div>
+      <div class="flex justify-center items-center bg-gray-200 rounded-full w-16 h-16 border-4 border-gray-800">
+  <i class="fa-solid fa-user text-gray-600 text-xl"></i>
+</div>
 
-      <div id="pages-container">
+      </div>
+    </div>
+  );
+
+  {
+    /* <SideBar />
+      <ProjectInfoBar /> */
+  }
+
+  {
+    /* <div id="pages-container">
         <div
           class="page bg-white shadow-lg mx-auto p-8 mb-8"
           contenteditable="true"
@@ -72,8 +123,15 @@ export default function ToolBar() {
             adorned with symbols she had never seen before in all her years of
             research.
           </p>
-        </div>
-      </div>
-    </div>
-  );
+        </div> */
+  }
+  {
+    /* </div> */
+  }
+  {
+    /* </div> */
+  }
+  {
+    /* ); */
+  }
 }

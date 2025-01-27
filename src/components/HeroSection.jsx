@@ -9,6 +9,8 @@ const HeroSection = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handleStartWriting = () => {
+    const api_key = import.meta.env.UNSPLASH_ACCESS_TOKEN;
+    console.log("your api key is: ", api_key);
     setIsActive(true);
   };
 

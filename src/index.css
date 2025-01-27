@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toolbar-btn {
+  @apply p-2 hover:bg-gray-100 rounded;
+}
+
+[contenteditable] {
+  outline: none;
+}

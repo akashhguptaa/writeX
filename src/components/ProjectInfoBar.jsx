@@ -119,9 +119,11 @@ export default function ProjectInfoBar() {
         anchor="right"
         open={open}
       >
-        <DrawerHeader>
+        <DrawerHeader className = "flex justify-center items-center">
+          <h1 className = 'flex justify-center items-center'>WriteX</h1>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            
           </IconButton>
         </DrawerHeader>
         <Divider />

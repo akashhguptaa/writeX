@@ -24,7 +24,7 @@ const NewProject = () => {
   };
 
   return (
-    <div className="pt-10 px-4 max-w-2xl mx-auto text-slate-900">
+    <div className="pt-10 px-4 max-w-2xl mx-auto text-slate-900 pb-6">
       <h1 className="text-3xl font-bold mb-8">Create New Project</h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -57,12 +57,12 @@ const NewProject = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2 pt-2">
             Cover Image (Optional)
           </label>
           <div
             onClick={handleSelectImage}
-            className="rounded-xl p-2 flex items-center justify-center cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors"
+            className="rounded-xl p-2 flex items-center justify-center cursor-pointer text-white bg-blue-500 hover:bg-blue-700 transition-colors"
           >
             Add Image
           </div>
@@ -81,17 +81,20 @@ const NewProject = () => {
           )}
         </div>
 
-        <div className="flex justify-end space-x-4">
+        <div className="flex justify-end space-x-4 pt-2">
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="px-4 py-2 rounded-md border border-cyan-700 text-cyan-700 text-sm text-center hover:bg-teal-600 hover:text-white"
+            className="px-4 py-2 rounded-md border border-blue-500 text-slate-800 text-sm text-center hover:bg-blue-500 hover:text-white"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="text-white bg-gradient-to-r from-teal-600 to-teal-800 hover:bg-gradient-to-br hover:from-teal-700 hover:to-slate-700 shadow-md dark:shadow-lg dark:shadow-teal-800 font-medium rounded-lg text-sm px-4 py-2 text-center "
+            className="text-white bg-blue-500  hover:bg-blue-700 shadow-md  font-medium rounded-lg text-sm px-4 py-2 text-center "
+            onClick={()=>{
+              
+            }}
           >
             Create Project
           </button>
