@@ -36,13 +36,13 @@ const HeroSection = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <main className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center px-6">
             <h2 className="text-4xl font-extrabold sm:text-5xl md:text-6xl">
               <span className="block">Write and Edit</span>
-              <span className="block bg-gradient-to-r from-cyan-200 via-cyan-400 to-sky-700 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-cyan-700 via-teal-500 to-sky-700 bg-clip-text text-transparent text-glow">
                 Like Never Before
-              </span>
+              </span> 
             </h2>
             <p className="mt-6 text-lg text-gray-200 sm:text-xl max-w-2xl mx-auto">
               Create, edit, and organize your documents with our powerful online
@@ -62,7 +62,7 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </main>
 
         {/* Pop-up */}
         {isActive && (

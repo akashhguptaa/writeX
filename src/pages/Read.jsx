@@ -74,7 +74,7 @@ const Read = () => {
           {projects.slice(0, 2).map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl"
             >
               <img
                 src={project.image}
@@ -104,7 +104,7 @@ const Read = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl"
             >
               <img
                 src={project.image}

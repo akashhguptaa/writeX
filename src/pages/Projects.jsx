@@ -105,7 +105,7 @@ const Projects = () => {
           )}
           
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} className = "w-64 h-80"/>
+            <ProjectCard key={project.id} project={project} className = "w-64 h-80 "/>
           ))}
           </div>
           

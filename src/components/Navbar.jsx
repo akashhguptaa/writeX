@@ -13,21 +13,23 @@ const Navbar = ({ background = "" }) => {
         <div className="sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex gap-16">
+            
+
               <Link to="/" className="delay-100">
                 <div className="m-2 flex gap-2">
                   <h1 className="text-4xl hover:text-gray-200">
-                    <span>Write</span>
-                    <span className="font-bold text-cyan-300 hover:text-cyan-500">
+                    <span>write</span>
+                    <span className="font-extrabold text-teal-500 hover:text-cyan-500">
                       X
                     </span>
                   </h1>
                   <img src={Icon} alt="writeX logo" className="h-10 w-auto" />
                 </div>
               </Link>
+            
 
               {/* Centered Navbar Links */}
-              <div className="flex-1 flex justify-center items-center">
+              <div className="flex-1 flex justify-center items-center gap-8">
                 <Link
                   to="/"
                   className="text-white hover:text-cyan-500 px-3 py-2 rounded-md"
@@ -62,10 +64,10 @@ const Navbar = ({ background = "" }) => {
                   Contact
                 </HashLink>
               </div>
-            </div>
+            
 
             {/* login and signup buttons */}
-            <div className="flex items-center gap-4 ml-auto">
+            <div className="flex items-center gap-10 ml-auto mr-4">
               <Link
                 to="/read"
                 className="flex items-center text-white hover:text-cyan-500 px-3 py-2 rounded-md gap-2"

@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
     <div className="grid grid-cols-1 gap-6">
   
       {/* Existing Project Card */}
-      <div className="w-64 h-80 bg-white border rounded-lg shadow-md overflow-hidden">
+      <div className="w-64 h-80 bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-2xl">
         <img
           src={project.image}
           alt={project.title}
